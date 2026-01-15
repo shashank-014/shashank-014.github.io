@@ -1,5 +1,14 @@
-/* ---------- THEME VARIABLES ---------- */
+/* ---------- LIGHT THEME (DEFAULT) ---------- */
 :root {
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --text: #0f172a;
+  --accent: #0284c7;
+  --chip: #e2e8f0;
+}
+
+/* ---------- DARK THEME ---------- */
+[data-theme="dark"] {
   --bg: #0f172a;
   --bg-card: #020617;
   --text: #e5e7eb;
@@ -7,13 +16,6 @@
   --chip: #1e293b;
 }
 
-[data-theme="light"] {
-  --bg: #f8fafc;
-  --bg-card: #ffffff;
-  --text: #0f172a;
-  --accent: #0284c7;
-  --chip: #e2e8f0;
-}
 
 /* ---------- BASE ---------- */
 body {
