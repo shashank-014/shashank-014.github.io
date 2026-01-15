@@ -1,27 +1,74 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #0f172a;
-  color: #e5e7eb;
-  line-height: 1.6;
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg: #0f172a;
+  --bg-card: #020617;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+  --chip: #1e293b;
 }
 
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --text: #0f172a;
+  --accent: #0284c7;
+  --chip: #e2e8f0;
+}
+
+/* ---------- BASE ---------- */
+body {
+  font-family: Inter, Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- HEADER ---------- */
 header {
   text-align: center;
-  padding: 40px;
-  background: #020617;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #020617, var(--bg));
 }
 
+header h1 {
+  margin-bottom: 8px;
+}
+
+#theme-toggle {
+  margin-top: 16px;
+  background: var(--chip);
+  border: none;
+  color: var(--text);
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ---------- SECTIONS ---------- */
 section {
-  padding: 40px;
+  padding: 40px 20px;
   max-width: 900px;
   margin: auto;
 }
 
 h2 {
-  color: #38bdf8;
+  color: var(--accent);
+  margin-bottom: 16px;
 }
 
+/* ---------- VIDEO ---------- */
+video {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 40px auto;
+  border-radius: 12px;
+}
+
+/* ---------- SKILLS ---------- */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -31,36 +78,21 @@ h2 {
 }
 
 .skills li {
-  background: #1e293b;
-  padding: 8px 12px;
-  border-radius: 5px;
-}
-
-.project {
-  background: #020617;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-
-.project a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-.resume-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #38bdf8;
-  color: #020617;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #020617;
+  background: var(--chip);
+  padding: 8px 14px;
+  border-radius: 999px;
   font-size: 14px;
 }
+
+/* ---------- PROJECTS ---------- */
+.project {
+  background: var(--bg-card);
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  tr
