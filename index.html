@@ -11,18 +11,21 @@
 <header>
   <h1>Shashank Kumar</h1>
   <p>MS CS (AI & ML) | Data Analytics | AI Automation</p>
+  <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
 </header>
 
 <section>
   <h2>About Me</h2>
   <p>
-    I am a Computer Science master's student specializing in AI & Machine Learning.
+    I am a Computer Science master’s student specializing in AI & Machine Learning.
     I enjoy solving real-world problems using data analytics, Python, and AI-driven automation.
     Actively seeking Data Analyst / AI / ML internship & full-time opportunities.
   </p>
 </section>
-<video width="900" autoplay loop muted playsinline>
-  <source src="assets/ai-ml-dashboard.mp4" type="video/mp4">
+
+<!-- Dashboard / Animation Video -->
+<video autoplay loop muted playsinline>
+  <source src="assets/Generating_Animated_Progressive_Charts_Video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -33,6 +36,7 @@
     <li>SQL</li>
     <li>Pandas & NumPy</li>
     <li>EDA & Data Visualization</li>
+    <li>Power BI</li>
     <li>Tableau</li>
     <li>Machine Learning Basics</li>
     <li>NLP & LLMs</li>
@@ -67,7 +71,6 @@
       View on GitHub →
     </a>
   </div>
-
 </section>
 
 <section>
@@ -77,14 +80,38 @@
 
 <section>
   <h2>Contact</h2>
-  <p>Email: your-email@gmail.com</p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
-  <p>GitHub: <a href="https://github.com/shashank-014" target="_blank">github.com/shashank-014</a></p>
+  <p>Email: shashank7kumar1@gmail.com</p>
+  <p>
+    LinkedIn:
+    <a href="https://linkedin.com/in/shashankkumar14" target="_blank">
+      linkedin.com/in/shashankkumar14
+    </a>
+  </p>
+  <p>
+    GitHub:
+    <a href="https://github.com/shashank-014" target="_blank">
+      github.com/shashank-014
+    </a>
+  </p>
 </section>
 
 <footer>
   <p>© 2026 Shashank Kumar</p>
 </footer>
 
-</body>
-</html>
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.setAttribute("data-theme", savedTheme);
+    toggleBtn.textContent = savedTheme === "light" ? "🌙" : "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const currentTheme = body.getAttribute("data-theme") || "dark";
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    toggleBtn.textContent = newTheme === "light" ? "🌙" : "☀️
