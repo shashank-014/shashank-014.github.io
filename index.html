@@ -103,15 +103,18 @@
   const toggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
 
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    body.setAttribute("data-theme", savedTheme);
-    toggleBtn.textContent = savedTheme === "light" ? "🌙" : "☀️";
-  }
+  // 1. Set LIGHT as default
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.setAttribute("data-theme", savedTheme);
+  toggleBtn.textContent = savedTheme === "light" ? "🌙" : "☀️";
 
+  // 2. Toggle logic
   toggleBtn.addEventListener("click", () => {
-    const currentTheme = body.getAttribute("data-theme") || "dark";
+    const currentTheme = body.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
+
     body.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
-    toggleBtn.textContent = newTheme === "light" ? "🌙" : "☀️
+    toggleBtn.textContent = newTheme === "light" ? "🌙" : "☀️";
+  });
+</script>
